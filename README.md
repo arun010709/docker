@@ -9,3 +9,13 @@ docker exec -it <container-id> /bin/bash
 Docker commit:
 Create cloned image of an existing container using below command:
 docker commit <original-container-id> <new-container-image-name>
+
+Creating images without Dockerfile:
+Google JIB:
+Add google jib plugin in pom.xml under <plugin> section - jib-maven-plugin
+Also need a configuration tag under plugin section to define the docker image name-> <configuration><to>spring-docker:4.0</to></configuration>
+mvn compile jib:dockerBuild 
+
+Spring starter pack(From Spring boot 2.3.x version):
+mvn spring-boot:build-image
+mvn spring-boot:build-image -Dspring-boot.build-image.imageName=spring-docker-app:v2
