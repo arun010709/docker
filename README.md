@@ -19,3 +19,16 @@ mvn compile jib:dockerBuild
 Spring starter pack(From Spring boot 2.3.x version):
 mvn spring-boot:build-image
 mvn spring-boot:build-image -Dspring-boot.build-image.imageName=spring-docker-app:v2
+
+Docker Hub:
+Registry of docker images.
+
+
+1.Create account in docker hub.
+2.Create a tag for your image with your username.
+docker tag <image-name> <tagged-image-name>
+3.Push the image.	
+docker push <tagged-image-name>
+4.To use image, user can pull:
+docker pull <tagged-image-name>
+	
